@@ -1,9 +1,53 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ion-toolbar">
     <ion-title>
       Tab Two
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+<div>
+  <ion-slides *ngIf="imageContainer && imageContainer.length" pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let image of imageContainer" no-padding>
+      <a href="{{image.link}}"><img class="displayed" src="{{image.url}}" width="100%" height="100%"></a>
+    </ion-slide>
+  </ion-slides>
+</div>
+
+<div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card style="background-color: #2980b9" button="true" class="ion-text-center ion-padding">
+          <ion-icon name="people"></ion-icon>
+          <div class="card-title">Anggota</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card style="background-color: #27ae60" button="true" text-center padding>
+          <ion-icon name="cash"></ion-icon>
+          <div class="card-title">Simpan Pinjam</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card style="background-color: #e67e22" button="true" text-center padding>
+          <ion-icon name="wallet"></ion-icon>
+          <div class="card-title">Setoran</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card style="background-color: #e74c3c" button="true" text-center padding>
+          <ion-icon name="folder"></ion-icon>
+          <div class="card-title">Oper Berkas</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+</ion-content>
